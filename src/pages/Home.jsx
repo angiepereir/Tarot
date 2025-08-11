@@ -12,13 +12,13 @@ export default function Home() {
     getAllCards().then((res) => setCards(res.data));
   }, []);
 
-  // Si el usuario aún no ha elegido qué ver
+  // Si el usuario no ha elegido qué ver
   if (!view) {
     return (
-      <div className="min-h-screen relative overflow-hidden bg-black">
+      <div className="min-h-screen relative overflow-x-hidden">
         {/* Fondo espacial más oscuro con nebulosas sutiles */}
         <div 
-          className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-900 to-black"
+          className="absolute inset-0 bg-black z-0 overflow-x-hidden"
           style={{
             backgroundImage: `
               radial-gradient(circle at 15% 40%, rgba(88, 28, 135, 0.15) 0%, transparent 60%),
@@ -30,7 +30,7 @@ export default function Home() {
         />
         
         {/* Estrellas animadas */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 z-10">
           {[...Array(50)].map((_, i) => (
             <div
               key={i}
@@ -46,7 +46,7 @@ export default function Home() {
         </div>
 
         {/* Contenido principal */}
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center">
+        <div className="relative z-20 flex flex-col items-center justify-center min-h-screen px-6 text-center overflow-x-hidden">
           {/* Título */}
           <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 mb-4 tracking-wide">
             🔮 Tarot STEM
@@ -56,12 +56,12 @@ export default function Home() {
             Conecta con la sabiduría del universo y descubre tu destino
           </p>
 
-          {/* Bola de cristal 3D ultra realista */}
+          {/* Bola de cristal 3D */}
           <div className="relative mb-16">
             {/* Sombra base */}
             <div className="absolute top-72 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-black/40 rounded-full blur-lg" />
             
-            {/* Glow exterior suave */}
+            {/* Glow exterior */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-400/20 via-blue-400/15 to-indigo-400/20 blur-2xl opacity-60 animate-pulse scale-125" />
             
             {/* Bola principal 3D */}
@@ -207,12 +207,12 @@ export default function Home() {
     );
   }
 
-  // Si elige ver todas las cartas - CON FONDO COMPLETAMENTE OSCURO
+  // Si elige ver todas las cartas 
   return (
-    <div className="min-h-screen bg-black relative">
-      {/* Fondo espacial oscuro para toda la pantalla */}
+    <div className="min-h-screen relative bg-black">
+      {/* Fondo espacial oscuro */}
       <div 
-        className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-900 to-black"
+        className="absolute inset-0 bg-black z-0"
         style={{
           backgroundImage: `
             radial-gradient(circle at 15% 40%, rgba(88, 28, 135, 0.1) 0%, transparent 60%),
@@ -224,7 +224,7 @@ export default function Home() {
       />
       
       {/* Estrellas de fondo */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-10">
         {[...Array(30)].map((_, i) => (
           <div
             key={i}
@@ -239,7 +239,7 @@ export default function Home() {
         ))}
       </div>
 
-      <div className="relative z-10 px-6 pt-8">
+      <div className="relative z-20 px-6 pt-8 pb-16">
         {/* Botón de regreso */}
         <button
           onClick={() => setView(null)}

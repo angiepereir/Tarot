@@ -1,12 +1,26 @@
-# React + Vite
+# 🔮 Tarot STEM
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto hecho con **React 19**, **Vite** y **TailwindCSS**, donde se muestran cartas de tarot con animaciones, gradientes y navegación con `react-router-dom`.
 
-Currently, two official plugins are available:
+##  Cómo lo hice
+- Usé **React** con Vite para montar la app.  
+- Estilos y animaciones con **TailwindCSS**.  
+- Manejo de rutas con **react-router-dom**.  
+- Peticiones HTTP a la API con **axios**.  
+- Animaciones de partículas y efectos visuales con **tsparticles** y **react-tsparticles**.  
+- Componentes separados para la pantalla de inicio, grid de cartas y detalle.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Dependencias instaladas
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```json
+"dependencies": {
+  "@tailwindcss/vite": "^4.1.11",
+  "axios": "^1.11.0",
+  "react": "^19.1.0",
+  "react-dom": "^19.1.0",
+  "react-router-dom": "6.4",
+  "react-tsparticles": "^2.12.2",
+  "tailwindcss": "^4.1.11",
+  "tsparticles": "^3.9.1",
+  "tsparticles-slim": "^2.12.0"
+}

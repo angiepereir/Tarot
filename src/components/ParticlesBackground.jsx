@@ -4,13 +4,10 @@ import Particles from 'react-tsparticles';
 
 const ParticlesBackground = () => {
   const particlesInit = useCallback(async (engine) => {
-    // Carga solo las características necesarias para mejor rendimiento
     await loadSlim(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async (container) => {
-    // console.log('Partículas cargadas:', container);
-  }, []);
+  const particlesLoaded = useCallback(async () => {}, []);
 
   return (
     <Particles
@@ -23,113 +20,78 @@ const ParticlesBackground = () => {
         left: 0,
         width: '100%',
         height: '100%',
-        zIndex: -1,
+        // zIndex 0 para que quede sobre el fondo negro pero debajo del contenido
+        zIndex: 0,
         pointerEvents: 'none'
       }}
       options={{
-        background: {
-          color: {
-            value: 'transparent'
-          }
-        },
-        fpsLimit: 120,
+        background: { color: { value: 'transparent' } },
+        fpsLimit: 60,
+        detectRetina: true,
+        // Formal: sin interacción (además pointer-events none)
         interactivity: {
           events: {
-            onClick: {
-              enable: true,
-              mode: 'push'
-            },
-            onHover: {
-              enable: true,
-              mode: 'repulse'
-            },
+            onClick: { enable: false, mode: 'push' },
+            onHover: { enable: false, mode: 'repulse' },
             resize: true
-          },
-          modes: {
-            push: {
-              quantity: 4
-            },
-            repulse: {
-              distance: 200,
-              duration: 0.4
-            }
           }
         },
         particles: {
+          // Colores acordes a tu UI: purple/pink/indigo (tonos medios/suaves)
           color: {
-            value: ['#9333ea', '#a855f7', '#c084fc', '#e879f9', '#fbbf24', '#f59e0b']
+            value: ['#a78bfa', '#c084fc', '#f472b6', '#818cf8'] // violet-400, purple-300, pink-400, indigo-400
           },
           links: {
-            color: '#a855f7',
-            distance: 150,
-            enable: false,
-            opacity: 0.3,
-            width: 1
+            enable: false
           },
           move: {
-            direction: 'none',
             enable: true,
-            outModes: {
-              default: 'bounce'
-            },
-            random: true,
-            speed: 1.5,
-            straight: false
+            direction: 'none',
+            random: false,
+            speed: 0.35,            // movimiento lento
+            straight: false,
+            outModes: { default: 'out' }
           },
           number: {
-            density: {
-              enable: true,
-              area: 800
-            },
-            value: 80
+            density: { enable: true, area: 1200 },
+            value: 45                // menos densidad
           },
           opacity: {
-            value: { min: 0.2, max: 0.8 },
+            value: { min: 0.15, max: 0.35 },
             animation: {
               enable: true,
-              speed: 1,
+              speed: 0.4,
               minimumValue: 0.1,
               sync: false
             }
           },
           shape: {
-            type: ['circle', 'triangle', 'star'],
-            options: {
-              star: {
-                sides: 5
-              },
-              triangle: {
-                sides: 3
-              }
-            }
+            type: 'circle'          // sin triángulos/estrellas (más formal)
           },
           size: {
-            value: { min: 1, max: 5 },
+            value: { min: 0.6, max: 2.2 },
             animation: {
               enable: true,
-              speed: 2,
+              speed: 0.8,
               minimumValue: 0.5,
               sync: false
             }
           },
+          // Twinkle muy sutil para sensación “estelar” sin distracción
           twinkle: {
             particles: {
               enable: true,
-              frequency: 0.05,
-              opacity: 1
+              frequency: 0.01,
+              opacity: 0.8
             }
           },
+          // Rotación desactivada para look más sobrio
           rotate: {
-            value: { min: 0, max: 360 },
-            direction: 'random',
-            animation: {
-              enable: true,
-              speed: 2,
-              sync: false
-            }
+            value: 0,
+            direction: 'clockwise',
+            animation: { enable: false, speed: 0 }
           }
-        },
-        detectRetina: true
+        }
       }}
     />
   );

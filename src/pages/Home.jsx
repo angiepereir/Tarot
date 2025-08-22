@@ -146,7 +146,7 @@ export default function Home() {
                 }}
               />
               
-              {/* Micro reflejos adicionales */}
+              {/* Micro reflejos*/}
               <div className="absolute top-12 left-20 w-3 h-3 bg-white/60 rounded-full blur-sm" />
               <div className="absolute bottom-16 right-24 w-2 h-2 bg-blue-200/40 rounded-full blur-sm" />
               <div className="absolute top-24 right-16 w-1 h-1 bg-purple-200/50 rounded-full" />
@@ -207,7 +207,7 @@ export default function Home() {
     );
   }
 
-  // Si elige ver todas las cartas 
+  // ver todas las cartas 
   return (
     <div className="min-h-screen relative bg-black">
       {/* Fondo espacial oscuro */}
@@ -257,7 +257,7 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Grid de cartas con fondo oscuro forzado */}
+        {/* Grid de cartas con fondo oscuro */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-7xl mx-auto pb-12">
           {cards.map((card) => (
             <div

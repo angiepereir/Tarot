@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full h-16 z-50">
-      {/* Fondo con efectos espaciales similares al Home */}
       <div 
         className="absolute inset-0 bg-black/90 backdrop-blur-md border-b border-purple-500/30"
         style={{
@@ -31,7 +30,6 @@ export default function Navbar() {
         ))}
       </div>
 
-      {/* Contenido del navbar */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
         <h1 className="text-xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400">
           🔮 Tarot STEM
@@ -65,7 +63,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Glow sutil en el borde inferior */}
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
     </nav>
   );

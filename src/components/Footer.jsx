@@ -1,7 +1,6 @@
 export default function Footer() {
   return (
     <footer className="relative text-white text-center py-6 mt-10">
-      {/* Fondo con efectos espaciales similares al Home */}
       <div 
         className="absolute inset-0 bg-black/95 backdrop-blur-sm border-t border-purple-500/30"
         style={{
@@ -29,10 +28,8 @@ export default function Footer() {
         ))}
       </div>
 
-      {/* Glow sutil en el borde superior */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
 
-      {/* Contenido del footer */}
       <div className="relative z-10 max-w-4xl mx-auto px-6">
         <p className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-300 to-indigo-300 text-base mb-2 font-medium">
           ✦ Que la sabiduría ancestral te guíe ✦
